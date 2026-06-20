@@ -1,0 +1,30 @@
+# IDE workspace files
+.idea/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.iml
+
+# .NET build output
+**/bin/
+**/obj/
+**/[Dd]ebug/
+**/[Rr]elease/
+publish/
+
+# Godot-generated editor and build cache
+**/.godot/
+**/.mono/
+
+# ReSharper and Rider caches
+_ReSharper*/
+*.DotSettings.user
+
+# NuGet packages restored locally
+packages/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -33,18 +33,11 @@ public sealed class IHaveStart : IF_I_CAN_WINCard
 
         await PlayerCmd.GainEnergy(10, Owner);
         await CardPileCmd.Draw(choiceContext, 10, Owner);
-        await PowerCmd.Apply<StrengthPower>(
-            choiceContext,
-            Owner.Creature,
-            -100,
-            Owner.Creature,
-            this,
-            silent: false);
 
         await PowerCmd.Apply<IHaveStartPower>(
             choiceContext,
             Owner.Creature,
-            1,
+            10,
             Owner.Creature,
             this,
             silent: false);

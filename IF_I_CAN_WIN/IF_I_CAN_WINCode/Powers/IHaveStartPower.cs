@@ -23,8 +23,8 @@ public sealed class IHaveStartPower : IF_I_CAN_WINPower
             100,
             player.Creature,
             cardSource: null,
-            silent: false).ConfigureAwait(false);
+            silent: false);
 
-        await PlayerCmd.GainEnergy(10, player).ConfigureAwait(false);
+        await PlayerCmd.GainEnergy(10, player);
     }
 }

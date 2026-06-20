@@ -11,6 +11,8 @@ namespace IF_I_CAN_WIN.IF_I_CAN_WINCode.Cards;
 [Pool(typeof(ColorlessCardPool))]
 public sealed class IHaveStart : IF_I_CAN_WINCard
 {
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Innate];
+
     public IHaveStart() : base(
         0, 
         CardType.Power, 
@@ -27,17 +29,17 @@ public sealed class IHaveStart : IF_I_CAN_WINCard
             100,
             Owner.Creature,
             this,
-            silent: false).ConfigureAwait(false);
+            silent: false);
 
-        await PlayerCmd.GainEnergy(10, Owner).ConfigureAwait(false);
-        await CardPileCmd.Draw(choiceContext, 10, Owner).ConfigureAwait(false);
+        await PlayerCmd.GainEnergy(10, Owner);
+        await CardPileCmd.Draw(choiceContext, 10, Owner);
         await PowerCmd.Apply<StrengthPower>(
             choiceContext,
             Owner.Creature,
             -100,
             Owner.Creature,
             this,
-            silent: false).ConfigureAwait(false);
+            silent: false);
 
         await PowerCmd.Apply<IHaveStartPower>(
             choiceContext,
@@ -45,6 +47,6 @@ public sealed class IHaveStart : IF_I_CAN_WINCard
             1,
             Owner.Creature,
             this,
-            silent: false).ConfigureAwait(false);
+            silent: false);
     }
 }
